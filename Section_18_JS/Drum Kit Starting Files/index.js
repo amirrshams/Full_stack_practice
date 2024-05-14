@@ -2,11 +2,13 @@ var list = document.getElementsByClassName("drum");
 for (var i = 0; i < list.length; i++) {
     list[i].addEventListener("click", function(){
         var buttonInnerHTML = this.innerHTML;
-        playSound(buttonInnerHTML);}); 
+        playSound(buttonInnerHTML);
+        makeAnimation(buttonInnerHTML);}); 
                 
 }
 document.addEventListener("keydown", function(event){
     playSound(event.key);
+    makeAnimation(event.key);
 });
 
 function playSound(key){
@@ -22,7 +24,7 @@ function playSound(key){
         case "s":
             var s = new Audio("./sounds/snare.mp3");
             s.play();
-        break;
+            break;
         case "d":
             var d = new Audio("./sounds/tom-1.mp3");
             d.play();
@@ -47,6 +49,13 @@ function playSound(key){
 }
 }
 
+function makeAnimation(currentKey){
+    var activeButton = document.querySelector(`.${currentKey}`); 
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100);   
+}
 
 // var audio = new Audio("sounds/tom-1.mp3");
 // audio.play();
