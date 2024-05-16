@@ -7,8 +7,13 @@
 //Created by Angela Yu.
 //Copyright 2019.
 
-// If you're running this locally in VS Code use the commands:
-// npm install
-// to install the node modules and
-// npm run dev
-// to launch your react project in your browser
+import React from 'react';
+import ReactDom from 'react-dom'
+
+const year = new Date().getFullYear()
+ReactDom.render(
+    <div>
+        <p>Amirreza Shams</p>
+        <p>Copyright {year}</p>
+    </div>
+    ,document.getElementById("root"))
