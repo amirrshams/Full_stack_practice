@@ -1,0 +1,15 @@
+.heading{
+    color: red;
+}
+
+/*make only the second item blue*/
+
+
+ul li:nth-child(2){
+    color: blue
+}
+
+.image{
+    height: 150px;
+    width: auto;
+}
